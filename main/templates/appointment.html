@@ -4,9 +4,35 @@
 
 <section class="py-5">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <h2 class="text-center mb-4 display-4">Contact Me</h2>
+    <div class="row align-items-center">
+      <!-- Left Column: "Get in Touch" -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="text-start mb-4 display-4">Get in Touch</h2>
+        <p class="lead">We'd love to hear from you! If you have any questions or need assistance, please feel free to reach out.</p>
+
+        <div class="contact-info">
+            <div class="contact-item mb-3">
+                <h5 class="text-dark">Call Us</h5>
+                <p class="text-dark">+91 9811113329</p>
+            </div>
+            <div class="contact-item mb-3">
+                <h5 class="text-dark">Email Us</h5>
+                <p><a href="mailto:vijchambers@gmail.com">vijchambers@gmail.com</a></p>
+            </div>
+            <div class="contact-item mb-3">
+                <h5 class="text-dark">Visit Us</h5>
+                <p class="text-dark">K17/6, DLF Phase II, Gurgaon, Chamber No. 406, Saket Court</p>
+            </div>
+            <div class="contact-item">
+                <h5 class="text-dark">LinkedIn</h5>
+                <a href="https://www.linkedin.com/in/deepakshi-jain-vij-2a27504b/?originalSubdomain=in" class="btn btn-primary btn-sm" target="_blank">click</a>
+            </div>
+        </div>
+    </div>
+
+      <!-- Right Column: Contact Form -->
+      <div class="col-md-6">
+        <h2 class="text-center mb-4 display-4">Drop Us Your Query</h2>
         <form id="contactForm" novalidate>
           {% csrf_token %}
           

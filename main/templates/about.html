@@ -9,13 +9,13 @@
             <h2 class="text-center mb-4 display-4">About Us</h2>
             <p class="lead text-center mb-5">We are a dedicated team of legal professionals committed to providing exceptional legal services. Our mission is to deliver the highest quality legal representation while ensuring that our clients receive personalized attention and support.</p>
             
-            <div class="row">
+            {% comment %} <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="bg-light p-4 rounded shadow-sm">
                         <h3 class="text-primary text-center">Our History</h3>
                         
-                        <p class="text-center">The Vij Chambers was founded in April 2019 in the leadership of Deepakshi Jain Vij providing end-to-end legal solutions, covering all the cross-sections of Civil Litigation including Matrimonial cases, Land disputes, succession issues, Issues related to property, Issues to individuals, Companies and Institutions ,Intellectual property, Contact Drafting, Alternate Dispute Resolution, and Competition Law having legal problems having its office in Gurgaon and New Delhi.</p>
-                        <p class="text-center">The Chamber has an extensive intellectual infrastructure in all aspects related to trademark registrations, copyright registrations and IP monetisation, as well as licensing and franchising. The Chamber deals in a broad range of issues and subjects having wider applications besides, trademarks, copyrights, trade names, trade secrets, geographical indications, foreign collaborations, licensing and franchising, assignments etc. and handles each and every area thereof including their registrations, oppositions, tracking of infringements and passing off, falsification, investigation etc.</p>
+                        <p >The Vij Chambers was founded in April 2019 in the leadership of Deepakshi Jain Vij providing end-to-end legal solutions, covering all the cross-sections of Civil Litigation including Matrimonial cases, Land disputes, succession issues, Issues related to property, Issues to individuals, Companies and Institutions ,Intellectual property, Contact Drafting, Alternate Dispute Resolution, and Competition Law having legal problems having its office in Gurgaon and New Delhi.</p>
+                        <p >The Chamber has an extensive intellectual infrastructure in all aspects related to trademark registrations, copyright registrations and IP monetisation, as well as licensing and franchising. The Chamber deals in a broad range of issues and subjects having wider applications besides, trademarks, copyrights, trade names, trade secrets, geographical indications, foreign collaborations, licensing and franchising, assignments etc. and handles each and every area thereof including their registrations, oppositions, tracking of infringements and passing off, falsification, investigation etc.</p>
                         
                     </div>
                 </div>
@@ -27,7 +27,41 @@
                         <p>Our commitment extends beyond just legal representation. We aim to empower our clients with knowledge, ensuring they understand their rights and options fully. By fostering open communication and transparency, we seek to make the legal process as smooth and straightforward as possible.</p>
                     </div>
                 </div>
+            </div> {% endcomment %}
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title text-center text-primary">Our History</h3>
+                            <p class="card-text">
+                                The Vij Chambers was founded in April 2019 under the leadership of Deepakshi Jain Vij providing end-to-end legal solutions. Covering all cross-sections of Civil Litigation including Matrimonial cases, Land disputes, succession issues, and property matters.
+                            </p>
+                            <p class="card-text">
+                                We strive to be a trusted advisor, providing expert legal counsel and representation across various legal disciplines. Our goal is to build lasting relationships with our clients by consistently achieving favorable outcomes and offering personalized support throughout their legal journeys.
+                            </p>
+                        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="card-title text-center text-primary">Our Mission</h3>
+                            <p class="card-text">
+                                At Vij Chambers, our mission is to deliver innovative and effective legal solutions tailored to each client's unique needs. We uphold the highest standards of integrity and professionalism.
+                            </p>
+                            <p class="card-text">
+                                We strive to be a trusted advisor, providing expert legal counsel and representation across various legal disciplines. Our goal is to build lasting relationships with our clients by consistently achieving favorable outcomes and offering personalized support throughout their legal journeys.
+                            </p>
+                            <p class="card-text">
+                                Our commitment extends beyond just legal representation. We aim to empower our clients with knowledge, ensuring they understand their rights and options fully. By fostering open communication and transparency, we seek to make the legal process as smooth and straightforward as possible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
 
             <h3 class="text-center my-4 display-4">Meet Our Team</h3>
             <div class="row">
@@ -68,4 +102,48 @@
             </div>
         </div>
     </section>
+    <style>
+        .card {
+            background: linear-gradient(135deg, #f0f4f8, #d9e8ff); /* Soft gradient background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, #e0ebf5, #c3d8ff); /* Change background on hover */
+        }
+        
+        .card-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1a73e8;
+        }
+        
+        .card-text {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .text-primary {
+            color: #1a73e8 !important; /* Use a vibrant blue for headings */
+        }
+        
+        .shadow-lg {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        body {
+            background-color: #f4f6f9; /* Soft background for the whole page */
+        }
+        
+        
+    </style>
 {% endblock %}
