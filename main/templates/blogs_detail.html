@@ -1,0 +1,16 @@
+<!-- blog_detail.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<section id="blog-detail" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">{{ blog.title }}</h2>
+        <div class="text-center mb-4">
+            {% if blog.image %}
+                <img src="{{ blog.image.url }}" class="img-fluid" alt="{{ blog.title }}">
+            {% endif %}
+        </div>
+        <p>{{ blog.content }}</p>
+    </div>
+</section>
+{% endblock %}

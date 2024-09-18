@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% load static %} 
+{% block content %}
+
+{% comment %} <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/law1.jpg' %}" class="d-block w-100" alt="Law image 1">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/law2.jpg' %}" class="d-block w-100" alt="Law image 2">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/law3.jpg' %}" class="d-block w-100" alt="Law image 3">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+</div> {% endcomment %}
+
+<style>
+    #testimonials .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    #testimonials .card-body {
+        padding: 2rem;
+    }
+    
+    #testimonials .card-title {
+        font-weight: bold;
+    }
+    
+    #testimonials .card-subtitle {
+        color: #777;
+    }
+
+    #about-founder .img-fluid{
+            max-width: 60%;
+            height: auto;
+
+    }
+    {% comment %} #landing {
+        background: url('{% static 'images/landing.jpg' %}');
+        background-position: center, left bottom;
+        background-repeat: no-repeat, no-repeat;
+        background-size: cover, auto;
+        height: 100vh;
+    } {% endcomment %}
+    #landing {
+        background: url('{% static 'images/landing.jpg' %}') no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+    }
+    
+
+</style>
+
+
+<!-- Landing Page Section -->
+<section id="landing" class="text-center text-black-100 d-flex justify-content-center align-items-center" style="background: url('{% static 'images/landing.jpg' %}') no-repeat center center; background-size: cover; height: 90vh;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4 mb-4">Welcome to Our Law Firm</h1>
+                <p class="lead mb-4">Providing expert legal services with a commitment to excellence. Our experienced attorneys are here to help you with your legal needs.</p>
+                <a href="{% url 'services' %}" class="btn btn-primary btn-lg">Our Services</a>
+                <a href="{% url 'appointment' %}" class="btn btn-light btn-lg ml-2">Book an Appointment</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="about-founder" class="my-5">
+    <div class="container">
+        <h2 class="text-center mb-4">About the Founder</h2>
+        <div class="row">
+            <div class="col-md-6">
+                {% comment %} <img src="{% static 'images/founder.jpg' %}" class="img-fluid rounded-circle" alt="Founder Image"> {% endcomment %}
+            </div>
+            <div class="col-md-6">
+                <h3>John Doe</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>John Doe is the founder of our law firm with over 20 years of experience in the legal field. He is known for his expertise in various areas of law and his commitment to providing exceptional legal services to his clients.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Testimonial Section -->
+<section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">What Our Clients Say</h2>
+        <div class="row">
+            <!-- Testimonial 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">"The law firm provided exceptional service during my case. Their attention to detail and dedication made all the difference."</p>
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-subtitle mb-2 text-muted">Business Owner</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">"Professional and reliable. They helped me navigate through complex legal issues with ease. Highly recommended!"</p>
+                        <h5 class="card-title">Jane Smith</h5>
+                        <p class="card-subtitle mb-2 text-muted">Entrepreneur</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">"Excellent legal advice and support. The team was always available to answer my questions and provide guidance."</p>
+                        <h5 class="card-title">Michael Johnson</h5>
+                        <p class="card-subtitle mb-2 text-muted">Freelancer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %} 
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Law Firm{% endblock %}</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS (Bootswatch theme) -->
+    <link rel="stylesheet" href="{% static 'css/bootswatch_minty.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="/">Law Firm</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'blogs' %}">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'appointment' %}">Book Appointment</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer class="bg-dark text-white mt-5">
+    <div class="container py-4">
+        <p class="text-center">&copy; 2024 Law Firm</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html> {% endcomment %}
