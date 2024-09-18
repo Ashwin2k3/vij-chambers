@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block title %}Our Services - Law Firm{% endblock %}
+{% comment %} {% extends 'base.html' %}
+
+{% block title %}Our Services - Law Firm{% endblock %}
 
 {% block content %}
     <!-- Services Section -->
@@ -70,6 +73,33 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+{% endblock %} {% endcomment %}
+
+
+{% block content %}
+    <!-- Services Section -->
+    <section id="services" class="my-5 py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 display-4">Our Services</h2>
+            <p class="lead text-center mb-5">At our firm, we offer a wide range of legal services to meet the diverse needs of our clients. Our experienced attorneys are dedicated to providing the highest level of service and expertise in each practice area.</p>
+            
+            <div class="row">
+                {% for service in services %}
+                <!-- Service Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card border-light shadow-sm">
+                        <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ service.title }}</h5>
+                            <p class="card-text">{{ service.description|safe|slice:":150" }}...</p>
+                            <a href="{% url 'service_detail' service.slug %}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

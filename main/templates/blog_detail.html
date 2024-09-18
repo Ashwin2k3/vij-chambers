@@ -10,7 +10,8 @@
                 <img src="{{ blog.image.url }}" class="img-fluid" alt="{{ blog.title }}">
             {% endif %}
         </div>
-        <p>{{ blog.content }}</p>
+        <p>{{ blog.content|safe }}</p>
+        <a href="{% url 'blogs' %}" class="btn btn-secondary">Back to Blogs</a>
     </div>
 </section>
 {% endblock %}

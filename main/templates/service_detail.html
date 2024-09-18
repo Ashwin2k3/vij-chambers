@@ -1,0 +1,32 @@
+ {% extends 'base.html' %}
+
+{% block title %}{{ service.title }} - Law Firm{% endblock %}
+
+{% comment %}{% block content %}
+    <div class="container my-5 py-5">
+        <h2 class="text-center mb-4 display-4">{{ service.title }}</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="{{ service.image.url }}" class="img-fluid mb-4" alt="{{ service.title }}">
+                <p class="lead">{{ service.detailed_description }}</p>
+                <a href="{% url 'services' %}" class="btn btn-secondary">Back to Services</a>
+            </div>
+        </div>
+    </div>
+{% endblock %} {% endcomment %}
+
+
+{% block content %}
+    <div class="container my-5 py-5">
+        <h2 class="text-center mb-4 display-4">{{ service.title }}</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                {% if service.image %}
+                    <img src="{{ service.image.url }}" class="img-fluid mb-4" alt="{{ service.title }}">
+                {% endif %}
+                <p class="lead">{{ service.detailed_description|safe }}</p>
+                <a href="{% url 'services' %}" class="btn btn-secondary">Back to Services</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
