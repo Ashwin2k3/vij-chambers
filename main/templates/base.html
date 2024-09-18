@@ -53,6 +53,40 @@
     <title>{% block title %}Law Firm{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/bootswatch_minty.css' %}">
+    <style>
+        .card-bg-color-1 {
+            background-color: #f8d7da !important; /* Light red */
+        }
+        .card-bg-color-2 {
+            background-color: #d1ecf1 !important; /* Light blue */
+        }
+        .card-bg-color-3 {
+            background-color: #d4edda !important; /* Light green */
+        }
+        .card-bg-color-4 {
+            background-color: #fff3cd !important; /* Light yellow */
+        }
+        .card-bg-color-5 {
+            background-color: #e2e3e5 !important; /* Light gray */
+        }
+        .card-bg-color-6 {
+            background-color: #cce5ff !important; /* Light blue */
+        }
+        .card-bg-color-7 {
+            background-color: #e6e6e6 !important; /* Very light gray */
+        }
+        .card-bg-color-8 {
+            background-color: #f5c6cb !important; /* Light pink */
+        }
+        .card-bg-color-9 {
+            background-color: #d6e9c6 !important; /* Pale green */
+        }
+        .card-bg-color-10 {
+            background-color: #d9edf7 !important; /* Light cyan */
+        }
+        
+    </style>
+    
 </head>
 <body>
 
@@ -82,7 +116,7 @@
     {% endblock %}
 </div>
 
-<footer class="bg-dark text-white pt-5 pb-4">
+{% comment %} <footer class="bg-dark text-white pt-5 pb-4">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-3">
@@ -93,9 +127,10 @@
             <div class="col-lg-4 col-md-6 mb-3">
                 <h5 class="text-uppercase mb-4">Contact Us</h5>
                 <ul class="list-unstyled">
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Law Street, Legal City, LC 12345</li>
-                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                    <li><i class="fas fa-envelope"></i> info@lawfirm.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> K17/6, DLF PHASE II, GURGAON CHAMBER NO. 406 IN SAKET COURT</li>
+                    <li><i class="fas fa-phone"></i> +91 9811113329</li>
+                    <li><i class="fas fa-envelope"></i> vijchambers@gmail.com</li>
+                    <li><i class="fas fa-envelope"></i> jdeepakshi@yahoo.com</li>
                 </ul>
             </div>
             
@@ -113,7 +148,7 @@
                         </a>
                     </li>
                     <li class="mr-3">
-                        <a href="https://linkedin.com" class="text-white" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/deepakshi-jain-vij-2a27504b/?originalSubdomain=in" class="text-white" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </li>
@@ -130,13 +165,167 @@
             <p class="mb-0">&copy; 2024 Law Firm. All rights reserved. | <a href="/privacy-policy" class="text-white">Privacy Policy</a> | <a href="/terms-of-service" class="text-white">Terms of Service</a></p>
         </div>
     </div>
+</footer> {% endcomment %}
+
+<footer class="bg-dark text-light pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Vij Chambers</h5>
+                <p class="text-muted">Providing exceptional legal services with a commitment to excellence and client satisfaction. Our experienced team ensures personalized and effective legal representation.</p>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt mr-2"></i>K17/6, DLF Phase II, Gurgaon, Chamber No. 406, Saket Court</li>
+                    <li><i class="fas fa-phone mr-2"></i>+91 9811113329</li>
+                    <li><i class="fas fa-envelope mr-2"></i>vijchambers@gmail.com</li>
+                    <li><i class="fas fa-envelope mr-2"></i>jdeepakshi@yahoo.com</li>
+                </ul>
+            </div>
+            
+            <!-- Services Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Our Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/services" class="text-light">Intellectual Property Rights</a></li>
+                    <li><a href="/services" class="text-light">Family Law</a></li>
+                    <li><a href="/services" class="text-light">Property Related Issues</a></li>
+                </ul>
+            </div>
+
+            <!-- Follow Us Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Follow Us</h5>
+                <ul class="list-unstyled d-flex">
+                    <li class="mr-3">
+                        <a href="https://facebook.com" class="text-light" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="https://twitter.com" class="text-light" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="https://www.linkedin.com/in/deepakshi-jain-vij-2a27504b/?originalSubdomain=in" class="text-light" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com" class="text-light" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="text-center pt-4 border-top border-light">
+            <p class="mb-0 text-muted">&copy; 2024 Vij Chambers. All rights reserved. | 
+                <a href="/privacy-policy" class="text-light">Privacy Policy</a> | 
+                <a href="/terms-of-service" class="text-light">Terms of Service</a>
+            </p>
+        </div>
+    </div>
 </footer>
+
+<!-- Custom CSS -->
+<style>
+  footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+
+  footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  footer a:hover {
+    color: #e9ecef;
+  }
+
+  footer i {
+    transition: color 0.3s ease;
+  }
+
+  footer i:hover {
+    color: #007bff;
+  }
+
+  .text-muted {
+    color: #6c757d !important;
+  }
+
+  .font-weight-bold {
+    font-weight: 700;
+  }
+</style>
+
+<!-- Custom CSS -->
+<style>
+  footer {
+    background-color: #343a40;
+  }
+
+  footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  footer a:hover {
+    color: #f8f9fa;
+  }
+
+  footer i {
+    transition: color 0.3s ease;
+  }
+
+  footer i:hover {
+    color: #007bff;
+  }
+
+  .text-muted {
+    color: #6c757d !important;
+  }
+
+  .font-weight-bold {
+    font-weight: 700;
+  }
+</style>
 
 
 <!-- Include jQuery and Bootstrap JS scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var carouselElement = document.getElementById('testimonialCarousel');
+        var carousel = new bootstrap.Carousel(carouselElement, {
+            interval: 5000
+        });
 
+        // Initialize Hammer.js
+        var hammertime = new Hammer(carouselElement);
+        hammertime.on('swipeleft', function() {
+            carousel.next();
+        });
+        hammertime.on('swiperight', function() {
+            carousel.prev();
+        });
+    });
+</script>
 </body>
 </html>

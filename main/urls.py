@@ -12,6 +12,8 @@ urlpatterns = [
     path('services/<slug:slug>/', views.service_detail, name='service_detail'),
     path('appointment/', views.book_appointment, name='appointment'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
+    path('terms-of-service/', views.terms_of_service, name='terms_of_service'),
     
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,83 +1,6 @@
 {% extends 'base.html' %}
 
 {% block title %}Our Services - Law Firm{% endblock %}
-{% comment %} {% extends 'base.html' %}
-
-{% block title %}Our Services - Law Firm{% endblock %}
-
-{% block content %}
-    <!-- Services Section -->
-    <section id="services" class="my-5 py-5">
-        <div class="container">
-            <h2 class="text-center mb-4 display-4">Our Services</h2>
-            <p class="lead text-center mb-5">At our firm, we offer a wide range of legal services to meet the diverse needs of our clients. Our experienced attorneys are dedicated to providing the highest level of service and expertise in each practice area.</p>
-            
-            <div class="row">
-                <!-- Service 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card border-light shadow-sm">
-                        <img src="https://via.placeholder.com/350x200?text=Service+1" class="card-img-top" alt="Service 1">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Corporate Law</h5>
-                            <p class="card-text">We provide comprehensive legal support for businesses, including mergers and acquisitions, corporate governance, and compliance matters. Our team ensures that your business operates within the legal framework while achieving its goals.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Service 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card border-light shadow-sm">
-                        <img src="https://via.placeholder.com/350x200?text=Service+2" class="card-img-top" alt="Service 2">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Family Law</h5>
-                            <p class="card-text">Our family law services include divorce, child custody, and support matters. We offer compassionate and effective legal representation to help you navigate complex family issues and reach a fair resolution.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Service 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card border-light shadow-sm">
-                        <img src="https://via.placeholder.com/350x200?text=Service+3" class="card-img-top" alt="Service 3">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Criminal Defense</h5>
-                            <p class="card-text">We offer robust defense strategies for clients facing criminal charges. Our attorneys are skilled in handling various criminal cases, including misdemeanors and felonies, ensuring that your rights are protected throughout the legal process.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Service 4 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card border-light shadow-sm">
-                        <img src="https://via.placeholder.com/350x200?text=Service+4" class="card-img-top" alt="Service 4">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Personal Injury</h5>
-                            <p class="card-text">If you've been injured due to someone else's negligence, we can help you seek compensation for your losses. Our personal injury attorneys are dedicated to advocating for your rights and ensuring you receive the justice you deserve.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Service 5 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card border-light shadow-sm">
-                        <img src="https://via.placeholder.com/350x200?text=Service+5" class="card-img-top" alt="Service 5">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Real Estate Law</h5>
-                            <p class="card-text">Our real estate law services cover property transactions, disputes, and development issues. Whether you're buying, selling, or leasing property, we provide expert guidance to ensure a smooth and legally sound process.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Service 6 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card border-light shadow-sm">
-                        <img src="https://via.placeholder.com/350x200?text=Service+6" class="card-img-top" alt="Service 6">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Employment Law</h5>
-                            <p class="card-text">We handle employment-related issues including wrongful termination, discrimination, and wage disputes. Our attorneys work to protect your rights as an employee and ensure fair treatment in the workplace.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-{% endblock %} {% endcomment %}
-
 
 {% block content %}
     <!-- Services Section -->
@@ -90,8 +13,8 @@
                 {% for service in services %}
                 <!-- Service Card -->
                 <div class="col-md-4 mb-4">
-                    <div class="card border-light shadow-sm">
-                        <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
+                    <div class="card border-light shadow-sm service-card">
+                        {% comment %} <img src="{{ service.image.url }}" class="card-img-top"  alt="{{ service.title }}"> {% endcomment %}
                         <div class="card-body">
                             <h5 class="card-title text-primary">{{ service.title }}</h5>
                             <p class="card-text">{{ service.description|safe|slice:":150" }}...</p>
@@ -103,4 +26,34 @@
             </div>
         </div>
     </section>
+
+    <!-- Include your JavaScript at the end of the body -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Define an array of color classes
+            const colors = [
+                'card-bg-color-1',
+                'card-bg-color-2',
+                'card-bg-color-3',
+                'card-bg-color-4',
+                'card-bg-color-5',
+                'card-bg-color-6',
+                'card-bg-color-7',
+                'card-bg-color-8',
+                'card-bg-color-9',
+                'card-bg-color-10'
+            ];
+            
+            // Get all the cards
+            const cards = document.querySelectorAll('.service-card');
+            
+            // Assign colors to each card in a sequential manner
+            cards.forEach((card, index) => {
+                const colorClass = colors[index % colors.length];
+                card.classList.add(colorClass);
+            });
+        });
+        </script>
+        
+        
 {% endblock %}

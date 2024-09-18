@@ -75,7 +75,7 @@ class Service(models.Model):
     title = models.CharField(max_length=200)
     description = RichTextField()  # Use RichTextField instead of TextField
     detailed_description = RichTextField()  # Use RichTextField instead of TextField
-    image = models.ImageField(upload_to='image_services/')
+    # image = models.ImageField(upload_to='image_services/')
     slug = models.SlugField(unique=True)
 
     def __str__(self):

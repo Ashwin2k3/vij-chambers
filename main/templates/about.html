@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}About Us - Law Firm{% endblock %}
 
 {% block content %}
@@ -22,8 +22,9 @@
                 <div class="col-lg-6 mb-4">
                     <div class="bg-light p-4 rounded shadow-sm">
                         <h3 class="text-primary text-center">Our Mission</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla.</p>
-                        <p>Our mission is to provide effective legal solutions and to advocate for our clients' best interests. We are dedicated to maintaining the highest standards of professionalism and integrity in all our dealings.</p>
+                        <p>At Vij Chambers, our mission is to deliver innovative and effective legal solutions tailored to meet the unique needs of each client. We are dedicated to upholding the highest standards of integrity, professionalism, and ethical practice.</p>
+                        <p>We strive to be a trusted advisor, providing expert legal counsel and representation across various legal disciplines. Our goal is to build lasting relationships with our clients by consistently achieving favorable outcomes and offering personalized support throughout their legal journeys.</p>
+                        <p>Our commitment extends beyond just legal representation. We aim to empower our clients with knowledge, ensuring they understand their rights and options fully. By fostering open communication and transparency, we seek to make the legal process as smooth and straightforward as possible.</p>
                     </div>
                 </div>
             </div>
@@ -31,27 +32,31 @@
             <h3 class="text-center my-4 display-4">Meet Our Team</h3>
             <div class="row">
                 <!-- Team Member 1 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-6 mb-6">
                     <div class="card border-light shadow-sm">
-                        <img src="https://via.placeholder.com/350x200?text=Team+Member+1" class="card-img-top" alt="Team Member 1">
+                        {% comment %} <img src="https://via.placeholder.com/350x200?text=Team+Member+1" class="card-img-top" alt="Team Member 1"> {% endcomment %}
+                        <img src="{% static 'images/founder.jpg' %}" class="card-img-top img-fluid  border border-primary" alt="Deepakshi Jain" style="max-width: 100%; height: auto;">
                         <div class="card-body text-center">
-                            <h5 class="card-title">John Doe</h5>
-                            <p class="card-text">John is a senior partner with over 20 years of experience in corporate law. He specializes in mergers and acquisitions, and corporate governance.</p>
+                            <h5 class="card-title">Deepakshi Jain Vij</h5>
+                            <p class="card-text">Mrs. Deepakshi Jain Vij, the founder, brings over 10 years of expertise in IPR laws, contract drafting, and handling matrimonial and domestic violence cases. Her dedication and experience have established her as a respected independent practitioner, adept at managing significant legal matters and representing clients in high courts and other legal forums.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Team Member 2 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-6 mb-6">
                     <div class="card border-light shadow-sm">
-                        <img src="https://via.placeholder.com/350x200?text=Team+Member+2" class="card-img-top" alt="Team Member 2">
+                        {% comment %} <img src="https://via.placeholder.com/350x200?text=Team+Member+2" class="card-img-top" alt="Team Member 2"> {% endcomment %}
+                        <img src="{% static 'images/advocate-aseem-nayyar.jpg' %}" class="card-img-top img-fluid  border border-primary" alt="Aseem" style="max-width: 70%; height: auto;">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Jane Smith</h5>
-                            <p class="card-text">Jane is an expert in family law and has a deep understanding of complex family matters. She is dedicated to providing compassionate and effective representation.</p>
+                            <h5 class="card-title">Aseem nayyer</h5>
+                            <p class="card-text">
+                                Aseem is an expert in family law with extensive experience in a range of complex matters, including anticipatory bail, arbitration, civil cases, court marriage, criminal cases, divorce, domestic violence, and family law. She also specializes in high court cases, patents, trademarks, and copyrights. Aseem is dedicated to providing compassionate and effective representation.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <!-- Team Member 3 -->
-                <div class="col-md-4 mb-4">
+                {% comment %} <div class="col-md-4 mb-4">
                     <div class="card border-light shadow-sm">
                         <img src="https://via.placeholder.com/350x200?text=Team+Member+3" class="card-img-top" alt="Team Member 3">
                         <div class="card-body text-center">
@@ -59,7 +64,7 @@
                             <p class="card-text">Robert focuses on criminal defense and has a track record of successfully defending clients in high-stakes cases. His expertise and dedication are unmatched.</p>
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </section>

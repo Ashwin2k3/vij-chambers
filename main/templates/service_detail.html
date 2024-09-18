@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 {% if service.image %}
-                    <img src="{{ service.image.url }}" class="img-fluid mb-4" alt="{{ service.title }}">
+                    {% comment %} <img src="{{ service.image.url }}" class="img-fluid mb-4" alt="{{ service.title }}"> {% endcomment %}
                 {% endif %}
                 <p class="lead">{{ service.detailed_description|safe }}</p>
                 <a href="{% url 'services' %}" class="btn btn-secondary">Back to Services</a>

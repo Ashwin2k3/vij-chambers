@@ -98,6 +98,12 @@ def service_detail(request, slug):
     service = get_object_or_404(Service, slug=slug)
     return render(request, 'service_detail.html', {'service': service})
 
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
+
+def terms_of_service(request):
+    return render(request, 'terms_of_service.html')
+
 def contact(request):
     if request.method == 'POST':
         name = request.POST.get('name', '')

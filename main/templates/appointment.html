@@ -1,109 +1,113 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% comment %} {% extends "base.html" %}
-
-{% block content %}
-  <!-- Content -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Contact Us</h2>
-            <form>
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {% endblock %} {% endcomment %}
-
- 
-{% comment %} <section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <h2 class="text-center mb-4">Contact Me</h2>
-        <form action="{% url 'contact' %}" method="post">
-          {% csrf_token %}
-          <div class="form-group">
-            <label for="name">Your Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section> {% endcomment %}
 
 <section class="py-5">
   <div class="container">
     <div class="row">
       <div class="col-md-8 mx-auto">
-        <h2 class="text-center mb-4">Contact Me</h2>
-        <form id="contactForm">
+        <h2 class="text-center mb-4 display-4">Contact Me</h2>
+        <form id="contactForm" novalidate>
           {% csrf_token %}
-          <div class="form-group">
-            <label for="name">Your Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+          
+          <!-- Name Input -->
+          <div class="form-group mb-3">
+            <label for="name" class="form-label">Your Name:</label>
+            <input type="text" class="form-control form-control-sm" id="name" name="name" required>
+            <div class="invalid-feedback">
+              Please enter your name.
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Your Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+
+          <!-- Email Input -->
+          <div class="form-group mb-3">
+            <label for="email" class="form-label">Your Email:</label>
+            <input type="email" class="form-control form-control-sm" id="email" name="email" required>
+            <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
           </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+
+          <!-- Message Textarea -->
+          <div class="form-group mb-3">
+            <label for="message" class="form-label">Message:</label>
+            <textarea class="form-control form-control-sm" id="message" name="message" rows="4" required></textarea>
+            <div class="invalid-feedback">
+              Please enter a message.
+            </div>
           </div>
-          <button type="button" class="btn btn-primary" onclick="openWhatsApp()">Submit</button>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button type="button" class="btn btn-primary btn-sm" onclick="validateAndSubmit()">Submit</button>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Custom CSS -->
+<style>
+  .form-label {
+    font-weight: bold;
+    font-size: 0.875rem; /* Slightly smaller font size */
+  }
+
+  .form-control-sm {
+    border-radius: 0.375rem;
+    border: 1px solid #ced4da;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+
+  .btn-primary:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+  }
+</style>
+
 <script>
-function openWhatsApp() {
+function validateAndSubmit() {
+  // Get the form element
+  const form = document.getElementById('contactForm');
+  
+  // Check if the form is valid
+  if (!form.checkValidity()) {
+    // Prevent form submission
+    event.preventDefault();
+    event.stopPropagation();
+    
+    // Add Bootstrap invalid class to form elements
+    form.classList.add('was-validated');
+    
+    return;
+  }
+  
   // Get form values
-  const name = document.getElementById('name').value;
-  const message = document.getElementById('message').value;
+  const name = document.getElementById('name').value.trim();
+  const message = document.getElementById('message').value.trim();
   
   // Phone number to open WhatsApp chat
   const phoneNumber = '9811113329';  // Replace with the actual phone number
   
   // Generate WhatsApp chat link
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=Hi, I'm ${name}. ${message}`;
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=Hi, I'm ${encodeURIComponent(name)}. ${encodeURIComponent(message)}`;
   
   // Open the link in a new window
   window.open(whatsappLink, '_blank');
 }
 </script>
-
-
 
 {% endblock content %}
