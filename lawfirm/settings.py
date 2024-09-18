@@ -25,7 +25,7 @@ SECRET_KEY = '*t6rl%%0*#j1%r-)hqxrwjgm_x-diy^%9ze2_w@qvz#fgtpiyw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
